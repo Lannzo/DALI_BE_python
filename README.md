@@ -73,7 +73,34 @@ DALI_BE_Python/
 - Node.js 18+
 - PostgreSQL 14+
 
-### 1. Database Setup
+### 🚀 Automated Setup (Recommended)
+
+The fastest way to get started:
+
+```bash
+# Windows
+python setup.py
+
+# Mac/Linux
+chmod +x setup.sh && ./setup.sh
+```
+
+This will automatically:
+- Create virtual environment
+- Install dependencies
+- Configure your `.env` file
+- Set up PostgreSQL database
+- Load sample data
+
+**For detailed instructions, see [SETUP.md](SETUP.md)**
+
+---
+
+### Manual Setup
+
+If you prefer manual setup:
+
+#### 1. Database Setup
 
 ```bash
 # Create database
@@ -86,7 +113,7 @@ psql -U postgres -d dali_db -f schema.sql
 psql -U postgres -d dali_db -f data.sql
 ```
 
-### 2. Backend Setup
+#### 2. Backend Setup
 
 ```bash
 # Create virtual environment
@@ -97,7 +124,7 @@ venv\Scripts\activate  # Windows
 # Install dependencies
 pip install -r requirements.txt
 
-# Create .env file
+# Create .env file (copy from template)
 cp .env.example .env  # Then edit with your credentials
 
 # Start backend
@@ -106,7 +133,7 @@ python main.py
 
 Backend runs at: `http://localhost:8000`
 
-### 3. Frontend Setup
+#### 3. Frontend Setup
 
 ```bash
 cd frontend
